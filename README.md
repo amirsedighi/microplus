@@ -26,7 +26,34 @@ $ minikube start
 
 $ minikube stop
 
+$ minukube dashboard
 
 
+## Kubernetes
+Here we will find how to let Kubernetes takes care of the bootified image we've created in previous steps.
+https://kubernetes.io/docs/tutorials/hello-minikube/
+
+$ eval $(minikube docker-env)
+
+$ kubectl create deployment hello-node --image=microplus-microservice-hello
+
+$ kubectl get deployments
+
+$ kubectl get pods
+
+$ kubectl get events
+
+$ kubectl config view
+
+$ kubectl expose deployment microplus-hello --type=LoadBalancer --port=8080
+
+service/microplus-hello exposed
+Amirs-MBP:hello amirsedighi$ minikube service microplus-hello
+|-----------|-----------------|-------------|-----------------------------|
+| NAMESPACE |      NAME       | TARGET PORT |             URL             |
+|-----------|-----------------|-------------|-----------------------------|
+| default   | microplus-hello |        8080 | http://192.168.99.117:30673 |
+|-----------|-----------------|-------------|-----------------------------|
+🎉  Opening service default/microplus-hello in default browser...
 
 
