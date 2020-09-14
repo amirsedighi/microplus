@@ -15,11 +15,11 @@ public class EventController {
     @Autowired
     EventService eventService;
 
-    @GetMapping("/greetings")
+    @GetMapping("/event")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void greetings(@RequestParam("message") String message) {
+    public void event(@RequestParam("payload") String payload) {
         Event event = Event.builder()
-                .message(message)
+                .message(payload)
                 .timestamp(System.currentTimeMillis())
                 .build();
         eventService.sendGreeting(event);

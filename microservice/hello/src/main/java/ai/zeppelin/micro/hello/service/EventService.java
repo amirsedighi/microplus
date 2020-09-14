@@ -19,7 +19,7 @@ public class EventService {
     }
 
     public void sendGreeting(final Event event) {
-        log.info("Sending greetings {}", event);
+        log.info("Sending Event {}", event);
         MessageChannel messageChannel = eventsStream.outboundEvents();
         messageChannel.send(MessageBuilder.withPayload(event).setHeader(MessageHeaders.CONTENT_TYPE, MimeTypeUtils.APPLICATION_JSON).build());
     }

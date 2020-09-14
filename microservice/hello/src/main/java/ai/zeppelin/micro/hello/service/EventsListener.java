@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class EventsListener {
     @StreamListener(EventsStream.INPUT)
-    public void handleGreetings(@Payload Event event) {
-        log.info("Received greetings: {}", event);
+    public void receiveEvent(@Payload Event event) {
+        log.info("Received Event: {}", event);
     }
 }
